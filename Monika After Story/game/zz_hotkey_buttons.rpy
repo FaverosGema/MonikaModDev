@@ -30,6 +30,7 @@ init python:
         store.hkb_button.extra_enabled = False
         store.hkb_button.music_enabled = False
         store.hkb_button.play_enabled = False
+        store.hkb_button.fave_i_love_you_enabled = False
 
 
     def mas_HKBDropShield():
@@ -40,6 +41,7 @@ init python:
         store.hkb_button.extra_enabled = True
         store.hkb_button.music_enabled = True
         store.hkb_button.play_enabled = True
+        store.hkb_button.fave_i_love_you_enabled = True
 
 
     def mas_HKBIsEnabled():
@@ -51,6 +53,7 @@ init python:
             and store.hkb_button.music_enabled
             and store.hkb_button.play_enabled
             and store.hkb_button.extra_enabled
+            and store.hkb_button.fave_i_love_you_enabled
         )
 
 
@@ -94,6 +97,9 @@ init -1 python in hkb_button:
 
     # property for disabling the movie button (unused)
     movie_buttons_enabled = False
+
+    # property for enabling the fave I love you button
+    fave_i_love_you_enabled = True
 
 
 # HOTKEY BUTTON SCREEN ========================================================
@@ -220,6 +226,17 @@ screen hkb_overlay():
 
                 background Image("mod_assets/hkb_disabled_background.png")
                 text "Play"
+
+
+        if store.hkb_button.fave_i_love_you_enabled:
+            textbutton _("Fave") action Function(love_fave)
+        else:
+            frame:
+                ypadding 5
+                xsize 120
+
+                background Image("mod_assets/hkb_disabled_background.png")
+                text "Fave"
 
 
 screen movie_overlay():

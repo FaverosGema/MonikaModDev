@@ -1,7 +1,5 @@
 # This is used for top-level game strucutre.
 # Should not include any actual events or scripting; only logic and calling other labels.
-#
-# NOTE: this is ran when user starts a new game.
 
 # For simplicity, I'm taking the MAS lines from the script.rpy that was made. It's basically the same.
 label start:
@@ -28,7 +26,10 @@ label start:
     $ config.allow_skipping = True
 
     #Jump to the space room.
-    jump ch30_main
+    if persistent.autoload:
+        jump ch30_autoload
+    else:
+        jump ch30_main
 
 label endgame(pause_length=4.0):
     $ quick_menu = False

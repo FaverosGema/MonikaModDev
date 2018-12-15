@@ -101,11 +101,6 @@ init -900 python in mas_ics:
         "o31rcg": ("o31_rin_cg.png", o31_rin)
     }
 
-    #################################### RPY ##################################
-    #game folder
-    game_folder = os.path.normcase(
-        renpy.config.basedir + "/game/"
-    )
     ###########################################################################
 
 

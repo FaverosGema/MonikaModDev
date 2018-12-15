@@ -315,8 +315,7 @@ label import_ddlc_persistent:
         #steam
         #Steam version of the DDLC?
         #There's no real way to merge this, so just use the old version
-        # NOTE: we cannot do this because it interferes with a topic
-        #persistent.steam=old_persistent.steam
+        persistent.steam=old_persistent.steam
 
         #tried_skip
         #Did the player try to skip Monika's dialogue in Act 3?

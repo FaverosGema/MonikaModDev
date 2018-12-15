@@ -16,7 +16,7 @@ init python:
         """
         Enables:
             - Talk button + hotkey
-            - Extra button + hotkey 
+            - Extra button + hotkey
             - Music button + hotkey + volume keys + mute key
             - Play button + hotkey
             - Calendar overlay
@@ -61,13 +61,15 @@ init python:
         store.mas_hotkeys.talk_enabled = True
         store.mas_hotkeys.extra_enabled = True
         store.mas_hotkeys.play_enabled = True
+        store.mas_hotkeys.fave_i_love_you_enabled = True
         store.hkb_button.talk_enabled = True
         store.hkb_button.extra_enabled = True
         store.hkb_button.play_enabled = True
+        store.hkb_button.fave_i_love_you_enabled = True
         store.mas_globals.dlg_workflow = False
         mas_calDropOverlayShield()
 
-    
+
     def mas_RaiseShield_dlg():
         """
         Disables:
@@ -85,9 +87,11 @@ init python:
         store.mas_hotkeys.talk_enabled = False
         store.mas_hotkeys.extra_enabled = False
         store.mas_hotkeys.play_enabled = False
+        store.mas_hotkeys.fave_i_love_you_enabled = False
         store.hkb_button.talk_enabled = False
         store.hkb_button.extra_enabled = False
         store.hkb_button.play_enabled = False
+        store.hkb_button.fave_i_love_you_enabled = False
         store.mas_globals.dlg_workflow = True
         mas_calRaiseOverlayShield()
 
@@ -109,6 +113,7 @@ init python:
         store.mas_hotkeys.talk_enabled = True
         store.mas_hotkeys.extra_enabled = True
         store.mas_hotkeys.play_enabled = True
+        store.mas_hotkeys.fave_i_love_you_enabled = True
         mas_OVLDropShield()
 
 
@@ -119,7 +124,7 @@ init python:
             - Extra button + hotkey
             - Music button
             - Play button + hotkey
-            - Calendar overlay           
+            - Calendar overlay
 
         Intended Flow:
             - The Music menu is opened
@@ -127,12 +132,13 @@ init python:
         store.mas_hotkeys.talk_enabled = False
         store.mas_hotkeys.extra_enabled = False
         store.mas_hotkeys.play_enabled = False
+        store.mas_hotkeys.fave_i_love_you_enabled = False
         mas_OVLRaiseShield()
 
 
 ################################## GENERALIZED ################################
     # NOTE: only generalized functions that are mult-module encompassing
-    # are allowed here. IF a generalized function is mostly related to 
+    # are allowed here. IF a generalized function is mostly related to
     # a specific store/module, make it there. NOT here.
 
     ################## Enable / Disable Music Menu ############################
@@ -163,5 +169,3 @@ init python:
         store.mas_hotkeys.music_enabled = False
         store.hkb_button.music_enabled = False
         store.songs.enabled = False
-
-
